@@ -5,12 +5,15 @@ Where Jennie represents the first argument passed in and Alfons the second.
 When you've set that up, invoke the function to see if it works.
 */
 
+
 const theCoders = (driver, navigator) => {
     console.log(
       `The awesome coders for today is the driver ${driver} and the navigator ${navigator}`
     );
   };
   theCoders("jennie", "tom");
+
+  
   /*
   2)
   Pass in only ONE name when you call the function and see what happens.
@@ -23,6 +26,22 @@ const theCoders = (driver, navigator) => {
   and print out: "The driver has the longest name." or "The navigator has the longest name" 
   or if the names ar the same length "The driver and the navigator has equally long names"
   */
+
+
+const codersLength = (driver, navigator) => {
+  const x = driver.length;
+  const y = navigator.length;
+
+  if (x<y){
+    console.log("The navigator has the longest name");
+  }else if (x>y){
+    console.log("The driver has the longest name");
+  }else{
+    console.log("The driver and the navigator has equally long names");
+  }
+}
+
+codersLength ("jennie", "tom");
   
   /*
   4) 
@@ -34,6 +53,28 @@ const theCoders = (driver, navigator) => {
   or alert('23! Younger than Zlatan') or something like that.
   Add as many conditonals as you want.
   */
+
+let userAge = prompt('How old are you?');
+
+const ageAnswer = (userAge) =>{
+  if(userAge<23){
+    alert(`${userAge}! Younger than Zlatan`);
+  } else if (55>userAge>33){
+    alert(`${userAge}! Older than me!`)
+  } else if (userAge>55){
+    alert(`wow! you are ${userAge} but you look younger.`)
+  }
+}
+
+ageAnswer(userAge);
+
+
+
+
+
+
+
+
   
   const calculationTest = () => {
     /*
