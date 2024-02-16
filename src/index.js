@@ -54,10 +54,10 @@ codersLength ("jennie", "tom");
   Add as many conditonals as you want.
   */
 
-let userAge = prompt('How old are you?');
 
-const ageAnswer = (userAge) =>{
-  if(userAge<23){
+const restart = function(){
+  const userAge = prompt('How old are you?');
+   if(userAge<23){
     alert(`${userAge}! Younger than Zlatan`);
   } else if (userAge<33 && userAge>=23){
     alert(`You are ${userAge}!Younger than me.`)
@@ -65,20 +65,30 @@ const ageAnswer = (userAge) =>{
     alert(`${userAge}! Older than me!`)
   } else if (userAge>=55){
     alert(`wow! you are ${userAge} but you look younger.`)
+  } else if (isNaN(userAge)){
+    alert(`Please fill in a valid number.`);
+    restart();
   }
-}
-
-ageAnswer(userAge);
-
-
-
-
-
-
-
-
   
-  const calculationTest = () => {
+}
+restart()
+
+
+
+const calculationTest = () => {
+  const result = parseInt(prompt('What is 5 + 6*3?') );
+  const x = 5 + 6*3 ;
+   if (isNaN(result)){
+      alert(`Please fill in a valid number.`);
+      calculationTest();  
+    } else if(x===result) {
+      alert('Yay! Correct');
+    } else if(x!==result){
+      alert('Noooo, the answer is 23');
+    }   
+}
+calculationTest()
+
     /*
     5)
     In this function we want to give the user a mathematical calculation to 
@@ -87,11 +97,30 @@ ageAnswer(userAge);
     If not, give the user the correct answer so they can learn. 'Noooo, the answer is 11'
     You choose if to use addition, subtraction, multiplication or division. 
     */
-  };
+
   
   /*
   6) **BONUS**
   Make the calculation machine we just made show random calculations everytime you invoke the function.
   But hey, maybe limit the randomness to be numbers between 0-10?
   */
+
+
   
+const randomCalculationTest = () => {
+  
+  const y = Math.random()*11;
+  const z = parseInt(prompt(`What is 5 + 6*${y}?`))
+  const x = 5 + 6*y;
+
+  if (isNaN(z)){
+    alert(`Please fill in a valid number.`);
+    randomCalculationTest();  
+  } else if(z===x) {
+    alert('Yay! Correct');
+  } else if(z!==x){
+    alert(`Noooo, the answer is ${x}`);
+  }  
+}   
+
+randomCalculationTest()
