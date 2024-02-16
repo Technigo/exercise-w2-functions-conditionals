@@ -59,9 +59,11 @@ let userAge = prompt('How old are you?');
 const ageAnswer = (userAge) =>{
   if(userAge<23){
     alert(`${userAge}! Younger than Zlatan`);
-  } else if (55>userAge>33){
+  } else if (userAge<33 && userAge>=23){
+    alert(`You are ${userAge}!Younger than me.`)
+  } else if (userAge>=33 && userAge<55){
     alert(`${userAge}! Older than me!`)
-  } else if (userAge>55){
+  } else if (userAge>=55){
     alert(`wow! you are ${userAge} but you look younger.`)
   }
 }
